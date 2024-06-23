@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import ZombieFighter from './components/ZombieFighter';
 
 const App = () => {
 	const [team, setTeam] = useState([]);
@@ -77,7 +78,25 @@ const App = () => {
 		},
 	]);
 
-	return <h1>Hello world!</h1>;
+	return (
+		<>
+			<h1>Zombie Fighters</h1>
+			<div>
+				<ul>
+					{zombieFighters.map((zombie, idx) => (
+						<ZombieFighter
+							key={zombie.name + idx}
+							name={zombie.name}
+							price={zombie.price}
+							strength={zombie.strength}
+							agility={zombie.agility}
+							img={zombie.img}
+						/>
+					))}
+				</ul>
+			</div>
+		</>
+	);
 };
 
 export default App;
