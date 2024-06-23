@@ -6,6 +6,10 @@ function ZombieFighter(props) {
 			props.setMoney(props.money - props.price);
 			const newTeam = [...props.team, props];
 			props.setTeam(newTeam);
+      const remainingFighters = props.zombieFighters.filter((fighter) => {
+			return fighter.name !== props.name;
+		});
+		props.setZombieFighters(remainingFighters);
 		} else {
 			console.log('Not enought money');
 		}
