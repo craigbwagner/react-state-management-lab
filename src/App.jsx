@@ -6,7 +6,9 @@ import TeamMember from './components/TeamMember';
 const App = () => {
 	const [team, setTeam] = useState([]);
 	const [money, setMoney] = useState(100);
-	const [zombieFighters, setZombieFighters] = useState([
+  const [teamStrength, setTeamStrength] = useState(0);
+  const [teamAgility, setTeamAgility] = useState(0);
+  const [zombieFighters, setZombieFighters] = useState([
 		{
 			name: 'Survivor',
 			price: 12,
@@ -77,12 +79,14 @@ const App = () => {
 			agility: 6,
 			img: 'https://via.placeholder.com/150/602b9e',
 		},
-	]);
+  ]);
 
-	return (
+  return (
 		<>
 			<h1>Zombie Fighters</h1>
 			<h2>Money: {money}</h2>
+			<h2>Team Strength: {teamStrength}</h2>
+			<h2>Team Agility: {teamAgility}</h2>
 			<h2>Team</h2>
 			<ul>
 				{team.length === 0
@@ -114,11 +118,15 @@ const App = () => {
 						setTeam={setTeam}
 						zombieFighters={zombieFighters}
 						setZombieFighters={setZombieFighters}
+						teamStrength={teamStrength}
+						setTeamStrength={setTeamStrength}
+						teamAgility={teamAgility}
+						setTeamAgility={setTeamAgility}
 					/>
 				))}
 			</ul>
 		</>
-	);
+  );
 };
 
 export default App;

@@ -10,8 +10,10 @@ function ZombieFighter(props) {
 			return fighter.name !== props.name;
 		});
 		props.setZombieFighters(remainingFighters);
+    props.setTeamStrength(props.teamStrength + props.strength);
+	props.setTeamAgility(props.teamAgility + props.agility);
 		} else {
-			console.log('Not enought money');
+			console.log('Not enough money');
 		}
   }
 
