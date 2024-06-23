@@ -85,16 +85,18 @@ const App = () => {
 			<h2>Money: {money}</h2>
 			<h2>Team</h2>
 			<ul>
-				{team.map((zombie, idx) => {
-					<TeamMember
-						key={zombie.name + idx}
-						name={zombie.name}
-						price={zombie.price}
-						strength={zombie.strength}
-						agility={zombie.agility}
-						img={zombie.img}
-					/>;
-				})}
+				{team.length === 0
+					? 'Pick some team members!'
+					: team.map((zombie, idx) => (
+							<TeamMember
+								key={zombie.name + idx}
+								name={zombie.name}
+								price={zombie.price}
+								strength={zombie.strength}
+								agility={zombie.agility}
+								img={zombie.img}
+							/>
+					  ))}
 			</ul>
 			<h2>Fighters</h2>
 			<ul>
