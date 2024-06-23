@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import ZombieFighter from './components/ZombieFighter';
+import TeamMember from './components/TeamMember';
 
 const App = () => {
 	const [team, setTeam] = useState([]);
@@ -82,20 +83,36 @@ const App = () => {
 		<>
 			<h1>Zombie Fighters</h1>
 			<h2>Money: {money}</h2>
-			<div>
-				<ul>
-					{zombieFighters.map((zombie, idx) => (
-						<ZombieFighter
-							key={zombie.name + idx}
-							name={zombie.name}
-							price={zombie.price}
-							strength={zombie.strength}
-							agility={zombie.agility}
-							img={zombie.img}
-						/>
-					))}
-				</ul>
-			</div>
+			<h2>Team</h2>
+			<ul>
+				{team.map((zombie, idx) => {
+					<TeamMember
+						key={zombie.name + idx}
+						name={zombie.name}
+						price={zombie.price}
+						strength={zombie.strength}
+						agility={zombie.agility}
+						img={zombie.img}
+					/>;
+				})}
+			</ul>
+			<h2>Fighters</h2>
+			<ul>
+				{zombieFighters.map((zombie, idx) => (
+					<ZombieFighter
+						key={zombie.name + idx}
+						name={zombie.name}
+						price={zombie.price}
+						strength={zombie.strength}
+						agility={zombie.agility}
+						img={zombie.img}
+						money={money}
+						setMoney={setMoney}
+						team={team}
+						setTeam={setTeam}
+					/>
+				))}
+			</ul>
 		</>
 	);
 };
