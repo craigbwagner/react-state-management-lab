@@ -99,6 +99,16 @@ const App = () => {
 								strength={zombie.strength}
 								agility={zombie.agility}
 								img={zombie.img}
+								money={money}
+								setMoney={setMoney}
+								team={team}
+								setTeam={setTeam}
+								zombieFighters={zombieFighters}
+								setZombieFighters={setZombieFighters}
+								teamStrength={teamStrength}
+								setTeamStrength={setTeamStrength}
+								teamAgility={teamAgility}
+								setTeamAgility={setTeamAgility}
 							/>
 					  ))}
 			</ul>
